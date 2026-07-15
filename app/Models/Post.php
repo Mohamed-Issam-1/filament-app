@@ -15,6 +15,7 @@ class Post extends Model
         'body',
         'tags',
         'published',
+        'published_at',
     ];
 
     protected $casts = [
