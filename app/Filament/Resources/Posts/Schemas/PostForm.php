@@ -2,14 +2,12 @@
 
 namespace App\Filament\Resources\Posts\Schemas;
 
-use App\Models\Category;
 use Filament\Forms\Components\Checkbox;
 use Filament\Forms\Components\ColorPicker;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\Select;
-use Filament\Forms\Components\TagsInput;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Group;
 use Filament\Schemas\Components\Section;
@@ -36,7 +34,8 @@ class PostForm
 
                                 Select::make('category_id')
                                     ->label('Category')
-                                    ->options(Category::all()->pluck('name', 'id')),
+                                    ->relationship('category', 'name')
+                                    ->searchable(),
 
                                 ColorPicker::make('color'),
                             ])->columns(2),
@@ -60,7 +59,9 @@ class PostForm
                             ->description('Configure the post settings')
                             ->icon(Heroicon::InformationCircle)
                             ->schema([
-                                TagsInput::make('tags'),
+                                Select::make('tags')
+                                    ->relationship('tags', 'name')
+                                    ->multiple(),
                                 Checkbox::make('published'),
                                 DatePicker::make('published_at'),
                             ]),
