@@ -13,14 +13,18 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+
             $table->string('name');
-            $table->string('sku');
-            $table->text('description');
-            $table->float('price');
-            $table->integer('stock');
-            $table->string('image');
+
+            $table->string('sku')->nullable();
+            $table->text('description')->nullable();
+            $table->float('price')->nullable();
+            $table->integer('stock')->default(0);
+            $table->string('image')->nullable();
+
             $table->boolean('is_active')->default(true);
             $table->boolean('is_featured')->default(false);
+
             $table->timestamps();
         });
     }

@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-#[Fillable(['name', 'email', 'password', 'city_id', 'state_id', 'country_id'])]
+#[Fillable(['name', 'email', 'password', 'city_id', 'state_id', 'country_id', 'type'])]
 #[Hidden(['password', 'remember_token'])]
 class User extends Authenticatable
 {
@@ -43,5 +43,20 @@ class User extends Authenticatable
     public function country()
     {
         return $this->belongsTo(Country::class);
+    }
+
+    public function isAdmin()
+    {
+        return $this->type === 'admin';
+    }
+
+    public function isManager()
+    {
+        return $this->type === 'manager';
+    }
+
+    public function isUser()
+    {
+        return $this->type === 'user';
     }
 }
