@@ -1,0 +1,186 @@
+@import '../../../../vendor/filament/filament/resources/css/theme.css';
+
+@source '../../../../app/Filament/**/*';
+@source '../../../../resources/views/filament/**/*';
+
+@theme {
+    --color-main-primary: #111827;
+    --color-main-secondary: #1f2937;
+    --color-main-surface: #18181b;
+    --color-main-border: #374151;
+    --color-main-muted: #9ca3af;
+}
+
+/* Sidebar */
+.fi-sidebar {
+    @apply bg-main-secondary border-r border-gray-700;
+}
+
+.fi-sidebar-header {
+    @apply bg-main-secondary border-b border-gray-700;
+}
+
+.fi-sidebar-item-icon,
+.fi-sidebar-item-label {
+    @apply text-gray-200;
+}
+
+.fi-sidebar-item-btn {
+    @apply rounded-sm;
+}
+
+.fi-sidebar-item-btn:hover {
+    @apply bg-gray-700;
+}
+
+.fi-sidebar-item-btn:hover .fi-sidebar-item-icon,
+.fi-sidebar-item-btn:hover .fi-sidebar-item-label {
+    @apply text-white;
+}
+
+.fi-sidebar-item.fi-active,
+.fi-sidebar-item.fi-active a {
+    @apply bg-blue-600 text-white rounded-sm;
+}
+
+.fi-sidebar-item.fi-active .fi-sidebar-item-icon,
+.fi-sidebar-item.fi-active .fi-sidebar-item-label {
+    @apply text-white;
+}
+
+/* Sidebar groups */
+.fi-sidebar-group-label {
+    @apply text-gray-400;
+}
+
+.fi-sidebar-group-button {
+    @apply text-gray-400;
+}
+
+/* Topbar */
+.fi-topbar {
+    @apply p-0 bg-main-primary border-b border-gray-700;
+}
+
+.fi-topbar-start {
+    @apply bg-main-secondary border-r border-gray-700;
+    width: 20rem;
+    height: 4rem;
+}
+
+.fi-topbar-start a .fi-logo {
+    @apply text-white;
+}
+
+/* Search input */
+.fi-global-search-field {
+    @apply bg-gray-800 text-white;
+}
+
+/* Tables */
+.fi-ta-ctn {
+    @apply rounded-sm bg-main-surface border border-gray-700;
+}
+
+.fi-ta-table {
+    @apply bg-main-surface;
+}
+
+.fi-ta-table th {
+    @apply bg-blue-600 text-white border border-blue-500;
+}
+
+.fi-ta-table td {
+    @apply bg-main-surface text-gray-200 border border-gray-700;
+}
+
+.fi-ta-table tr:hover td {
+    @apply bg-gray-800;
+}
+
+.fi-ta-text {
+    @apply text-gray-200;
+}
+
+/* Table actions */
+.fi-ta-actions a {
+    @apply border border-blue-400 px-2 py-1 rounded-sm bg-blue-600 text-white;
+}
+
+.fi-ta-actions a:hover {
+    @apply bg-blue-500;
+}
+
+.fi-ta-actions button {
+    @apply border border-red-400 px-2 py-1 rounded-sm bg-red-600 text-white;
+}
+
+.fi-ta-actions button:hover {
+    @apply bg-red-500;
+}
+
+/* Buttons */
+.fi-btn {
+    @apply rounded-sm;
+}
+
+/* Inputs */
+.fi-input-wrp {
+    @apply rounded-sm bg-gray-800 border-gray-600;
+}
+
+.fi-input-wrp input,
+.fi-input-wrp textarea,
+.fi-input-wrp select {
+    @apply text-white placeholder:text-gray-500;
+}
+
+/* Sections */
+.fi-section {
+    @apply rounded-sm bg-main-surface border border-gray-700;
+}
+
+.fi-section-header {
+    @apply bg-gray-800 border-b border-gray-700;
+}
+
+.fi-section-header-heading {
+    @apply text-white;
+}
+
+.fi-section-header-description {
+    @apply text-gray-400;
+}
+
+/* Stats cards */
+.fi-wi-stats-overview-stat {
+    @apply rounded-sm bg-main-surface border border-gray-700;
+}
+
+.fi-wi-stats-overview-stat-label {
+    @apply text-gray-400;
+}
+
+.fi-wi-stats-overview-stat-value {
+    @apply text-white;
+}
+
+/* Breadcrumbs and page titles */
+.fi-breadcrumbs-item-label {
+    @apply text-gray-400;
+}
+
+.fi-header-heading {
+    @apply text-white;
+}
+
+/* Dropdowns and modals */
+.fi-dropdown-panel,
+.fi-modal-window {
+    @apply bg-main-surface border border-gray-700;
+}
+
+/* Pagination */
+.fi-pagination {
+    @apply text-gray-300;
+}
